@@ -5,15 +5,13 @@ import random
 
 class Transport(ABC):
     @abstractmethod
-    def deliver(self): pass
+    def deliver(self):
+        pass
 
 class Truck(Transport):
-    def deliver(self):
-        print("Deliver by land in a box")
-
+    def deliver(self): print("Deliver by land in a box")
 class Ship(Transport):
-    def deliver(self):
-        print("Deliver by sea in a container")
+    def deliver(self): print("Deliver by sea in a container")
 
 
 class Logistics(ABC):
@@ -26,14 +24,14 @@ class Logistics(ABC):
         pass
 
 class RoadLogistics(Logistics):
-    def create_transport(self):
-        return Truck()
-
+    def create_transport(self): return Truck()
 class SeaLogistics(Logistics):
-    def create_transport(self):
-        return Ship()
+    def create_transport(self): return Ship()
+
+
+def client_code(logistics:Logistics):
+    logistics.plan_delivery()
 
 
 if __name__ == "__main__":
-    log = RoadLogistics() if random.randint(0,1) else SeaLogistics()
-    log.plan_delivery()
+    client_code(RoadLogistics() if random.randint(0,1) else SeaLogistics())
