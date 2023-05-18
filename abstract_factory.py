@@ -3,6 +3,7 @@
 from abc import ABC, abstractmethod
 import random
 
+
 class Chair(ABC): pass
 class Table(ABC): pass
 class Sofa(ABC): pass

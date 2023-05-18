@@ -3,6 +3,7 @@
 from abc import ABC, abstractmethod
 import random
 
+
 class Transport(ABC):
     @abstractmethod
     def deliver(self):
